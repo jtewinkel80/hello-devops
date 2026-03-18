@@ -1,0 +1,15 @@
+name: My First Pipeline
+
+on:
+  push:
+
+jobs:
+  run-code:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download code
+        uses: actions/checkout@v3
+
+      - name: Run a command
+        run: echo "Pipeline is running"
