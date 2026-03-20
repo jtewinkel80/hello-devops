@@ -19,5 +19,5 @@ jobs:
       - name: Install Flask
         run: pip install flask
 
-      - name: Run app
-        run: python app.py
+      if __name__ == "__main__":
+    print("App werkt")
