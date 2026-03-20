@@ -1,15 +1,23 @@
-name: My First Pipeline
+name: Run Python App
 
 on:
   push:
 
 jobs:
-  run-code:
+  run-python:
     runs-on: ubuntu-latest
 
     steps:
       - name: Download code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Run a command
-        run: echo "Pipeline is running"
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Flask
+        run: pip install flask
+
+      - name: Run app
+        run: python app.py
